@@ -61,6 +61,7 @@ public class MarketplaceActions : MonoBehaviour
             Debug.Log("Bought Cow");
             animalArea1 = new Vector3(Random.Range(10.19f, 15.52f), 3.5f, Random.Range(5.85f, 10.98f));
             Instantiate(Resources.Load("Cow"), animalArea1, Quaternion.identity);
+            DisplayCowNum.Lv1CowNum++;
         }
         else
         {
@@ -86,15 +87,19 @@ public class MarketplaceActions : MonoBehaviour
         {
             animalArea2 = new Vector3(Random.Range(5.32f, 10.33f), 3.5f, Random.Range(11.79f, 16.70f));
             Instantiate(Resources.Load("Pig"), animalArea2, Quaternion.identity);
+            DisplayPigNum.Lv1PigNum++;
         }
     }
 
     public void buyCorn()
     {
         //If true, subtract money from total and add new corn to scene
-        if (GetComponent<CurrencySystem>().subtractMoney(150))
+        if (GetComponent<CurrencySystem>().subtractMoney(50))
         {
             Debug.Log("Bought Corn");
+            cropArea = new Vector3(Random.Range(17f, 24.5f), 3.36f, Random.Range(25.5f, 29.5f));
+            Instantiate(Resources.Load("corn"), cropArea, Quaternion.identity);
+            DisplayCornNum.cornNum++;
         }
 
     }
@@ -102,9 +107,12 @@ public class MarketplaceActions : MonoBehaviour
     public void buyWheat()
     {
         //If true, subtract money from total and add new wheat to scene
-        if (GetComponent<CurrencySystem>().subtractMoney(150))
+        if (GetComponent<CurrencySystem>().subtractMoney(50))
         {
             Debug.Log("Bought Wheat");
+            cropArea = new Vector3(Random.Range(17f, 24.5f), 3.36f, Random.Range(25.5f, 29.5f));
+            Instantiate(Resources.Load("bunchofwheats"), cropArea, Quaternion.identity);
+            DisplayWheatNum.wheatNum++;
         }
 
     }
