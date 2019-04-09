@@ -62,6 +62,11 @@ public class MarketplaceActions : MonoBehaviour
             animalArea1 = new Vector3(Random.Range(10.19f, 15.52f), 3.5f, Random.Range(5.85f, 10.98f));
             Instantiate(Resources.Load("Cow"), animalArea1, Quaternion.identity);
             DisplayCowNum.Lv1CowNum++;
+            AnimalCornManager.manager.Add("cow");
+            Debug.Log("stuff in the list: ");
+            foreach(string stuff in AnimalCornManager.manager){
+                Debug.Log(stuff);
+            }
         }
         else
         {
