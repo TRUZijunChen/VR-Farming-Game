@@ -44,14 +44,15 @@ public class GazeAtCount : MonoBehaviour
             // Gaze time exceeded limit - button is considered clicked.
             if (lookTimer > timerDuration)
             {
-                
+                Debug.Log("Open buy sell menu, clicked: " + clicked + "show: " + show + ", showBuyMenu: " + ShowBuyMenu.show);
                    if (clicked == false) {
-                          Debug.Log("clicked on this object");
+                          
                           //GetComponent<Button>().onClick.Invoke();
                           //abover line is triggering the button click function of the object.
-                          if (!show) {
+                          if (!show && !ShowBuyMenu.show) {
                              menu.SetActive(true);
                              show = true;
+                             Debug.Log("show marketplace menu");
                           }
                        
                    }

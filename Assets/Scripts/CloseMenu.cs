@@ -44,6 +44,14 @@ public class CloseMenu : MonoBehaviour
                 {
                     Debug.Log("close button hit.");
                     menu.SetActive(false);
+                    switch (menu.name) {
+                        case "BuyMainMenu":
+                            ShowBuyMenu.show = false;
+                            break;
+                        case "SellMainMenu":
+                            ShowBuyMenu.show = false;
+                            break;
+                    }
                     clicked = true;
                 }
             }

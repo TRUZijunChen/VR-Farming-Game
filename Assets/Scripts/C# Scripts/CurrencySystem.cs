@@ -7,8 +7,8 @@ public class CurrencySystem : MonoBehaviour
 {
     public static int currentMoney; //current amount held by user
     Text money;
-    float time = 600f; //time in seconds for money generation
-
+    //float time = 600f; //time in seconds for money generation
+    float time = 30f;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +58,10 @@ public class CurrencySystem : MonoBehaviour
         }
         else
         {
-            currentMoney += 100;
-            time = 600f;
+            //currentMoney += 100;
+            //time = 600f;
+            currentMoney++;
+            time = 30f;
         }
     }
 }

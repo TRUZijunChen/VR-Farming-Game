@@ -7,7 +7,7 @@ public class ShowBuyMenu : MonoBehaviour
     public GameObject previousMenu;
     public GameObject menu;
     
-    private bool show;
+    public static bool show;
     private bool clicked;
 
     // Whether the Google Cardboard user is gazing at this button.
