@@ -100,7 +100,7 @@ public class MarketplaceActions : MonoBehaviour
     public void buyCorn()
     {
         //If true, subtract money from total and add new corn to scene
-        if (GetComponent<CurrencySystem>().subtractMoney(50))
+        if (GetComponent<CurrencySystem>().subtractMoney(30))
         {
             Debug.Log("Bought Corn");
             cropArea = new Vector3(Random.Range(17f, 24.5f), 3.36f, Random.Range(25.5f, 29.5f));
@@ -121,7 +121,7 @@ public class MarketplaceActions : MonoBehaviour
     public void buyWheat()
     {
         //If true, subtract money from total and add new wheat to scene
-        if (GetComponent<CurrencySystem>().subtractMoney(50))
+        if (GetComponent<CurrencySystem>().subtractMoney(30))
         {
             Debug.Log("Bought Wheat");
             cropArea = new Vector3(Random.Range(17f, 24.5f), 3.36f, Random.Range(25.5f, 29.5f));
@@ -170,6 +170,43 @@ public class MarketplaceActions : MonoBehaviour
 
     }
 
+    public void sellLv2Cow()
+    {
+
+        if (DisplayLv2CowNum.Lv2CowNum > 0)
+        {
+            GetComponent<CurrencySystem>().addMoney(250);
+
+            Debug.Log("sold Lv2 cow");
+            string compareStr = "Lv2cow";
+            //loop through the list find out lv1cow
+            foreach (string stuff in AnimalCornManager.manager)
+            {
+                string str = stuff.Substring(0, 6);
+                Debug.Log("first 6 characters are: " + str);
+                if (string.Compare(str, compareStr) == 0)
+                {
+                    AnimalCornManager.manager.Remove(stuff);
+                    Destroy(GameObject.Find(stuff));
+                    Debug.Log("Deleted object: " + stuff);
+                    DisplayLv2CowNum.Lv2CowNum--;
+                    break;
+                }
+            }
+        }
+        else {
+            Debug.Log("no lv2 cow to sell.");
+        }
+
+        Debug.Log("stuff in the list: ");
+        foreach (string stuff in AnimalCornManager.manager)
+        {
+            Debug.Log(stuff);
+        }
+
+
+    }
+
     public void sellLv1Pig()
     {
 
@@ -191,6 +228,40 @@ public class MarketplaceActions : MonoBehaviour
                     Destroy(GameObject.Find(stuff));
                     Debug.Log("Deleted object: " + stuff);
                     DisplayPigNum.Lv1PigNum--;
+                    break;
+                }
+            }
+        }
+
+        Debug.Log("stuff in the list: ");
+        foreach (string stuff in AnimalCornManager.manager)
+        {
+            Debug.Log(stuff);
+        }
+
+
+    }
+
+    public void sellLv2Pig()
+    {
+
+        if (DisplayLv2PigNum.Lv2PigNum > 0)
+        {
+            GetComponent<CurrencySystem>().addMoney(250);
+
+            Debug.Log("sold Lv2 pig");
+            string compareStr = "Lv2pig";
+            //loop through the list find out lv1cow
+            foreach (string stuff in AnimalCornManager.manager)
+            {
+                string str = stuff.Substring(0, 6);
+                Debug.Log("first 6 characters are: " + str);
+                if (string.Compare(str, compareStr) == 0)
+                {
+                    AnimalCornManager.manager.Remove(stuff);
+                    Destroy(GameObject.Find(stuff));
+                    Debug.Log("Deleted object: " + stuff);
+                    DisplayLv2PigNum.Lv2PigNum--;
                     break;
                 }
             }

@@ -21,11 +21,17 @@ public class DisplayCount : MonoBehaviour
     void Update()
     {
         switch (objectName) {
-            case "cowCount":
+            case "Lv1cowCount":
                 displayCount.text = DisplayCowNum.Lv1CowNum.ToString();
                 break;
-            case "pigCount":
+            case "Lv1pigCount":
                 displayCount.text = DisplayPigNum.Lv1PigNum.ToString();
+                break;
+            case "Lv2cowCount":
+                displayCount.text = DisplayLv2CowNum.Lv2CowNum.ToString();
+                break;
+            case "Lv2pigCount":
+                displayCount.text = DisplayLv2PigNum.Lv2PigNum.ToString();
                 break;
             case "cornCount":
                 displayCount.text = DisplayCornNum.cornNum.ToString();

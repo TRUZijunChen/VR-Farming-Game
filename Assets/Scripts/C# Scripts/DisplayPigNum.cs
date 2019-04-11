@@ -18,6 +18,6 @@ public class DisplayPigNum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Lv1PigNumDisplay.text = "Pig(LV.1): " + Lv1PigNum;
+        Lv1PigNumDisplay.text = "Lv1 Pig: " + Lv1PigNum;
     }
 }

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayCowNum : MonoBehaviour
+public class DisplayLv2PigNum : MonoBehaviour
 {
-    public static int Lv1CowNum;
-    Text Lv1CowNumDisplay;
+    public static int Lv2PigNum;
+    Text Lv2PigNumDisplay;
     // Start is called before the first frame update
     void Start()
     {
-        Lv1CowNumDisplay = GetComponent<Text>();//get text component
+        Lv2PigNumDisplay = GetComponent<Text>();//get text component
         //initial cow number is 0
-        Lv1CowNum = 0;
+        Lv2PigNum = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Lv1CowNumDisplay.text = "Lv1 Cow: " + Lv1CowNum;
+        Lv2PigNumDisplay.text = "Lv2 Pig: " + Lv2PigNum;
     }
 }
